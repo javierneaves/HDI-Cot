@@ -1,0 +1,39 @@
+<fieldset
+  ng-show="vm.fieldView == 3 &amp;&amp; !vm.flagStepByStep"
+  aria-hidden="true"
+  class="ng-hide"
+>
+  <div class="form-card">
+    <label class="fieldlabels">Teléfono:</label>
+    <input
+      type="text"
+      ng-model="vm.cellphone"
+      placeholder="Escribe tu número de teléfono"
+      class="ng-pristine ng-untouched ng-valid ng-empty"
+      aria-invalid="false"
+    />
+    <label class="fieldlabels">Email:</label>
+    <input
+      type="text"
+      ng-model="vm.email"
+      placeholder="Escribe tu correo"
+      class="ng-pristine ng-untouched ng-valid ng-empty"
+      aria-invalid="false"
+    />
+  </div>
+  <!-- ngIf: vm.userLogged != 'Invitado' -->
+  <button
+    class="btn btn-w-primary padding-btn pull-right"
+    type="submit"
+    ng-click="vm.nextStep3()"
+  >
+    Ver Cotización
+  </button>
+  <button
+    class="btn btn-cancel padding-btn pull-right"
+    type="submit"
+    ng-click="vm.backStep2()"
+  >
+    Atrás
+  </button>
+</fieldset>
