@@ -1,9 +1,15 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const FormName = () => {
-  const { register, handleSubmit, formState } = useForm();
+const FormName = ({ onSwitchForm, nombre: initialNombre, codigoPostal: initialCP }) => {
+  const { register, handleSubmit, formState } = useForm({
+    defaultValues: {
+      nombre: initialNombre,
+      codigoPostal: initialCP,
+    },
+  });
   const onSubmit = (data) => {
+    onSwitchForm(data)
     console.log(data);
   };
 
@@ -68,8 +74,8 @@ const FormName = () => {
               )}
           </div>
           <div className="container p-5 text-end">
-            <button type="submit" className="btn btn-primary btn-lg">
-              Siguiente{" "}
+            <button type="submit" className="btn btn-primary btn-lg" >
+              Siguiente
             </button>
           </div>
         </form>
